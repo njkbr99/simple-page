@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Для мого улюбленого дідуся ПДФ</title>
+
+  <!-- Прості стилі й “красиве” тло -->
+  <style>
+    :root {
+      --bg1: #4e54c8;
+      --bg2: #8f94fb;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--bg1), var(--bg2));
+      font-family: system-ui, sans-serif;
+      color: #fff;
+    }
+    .wrap {
+      backdrop-filter: blur(6px);
+      background: rgba(0,0,0,.35);
+      border-radius: 16px;
+      padding: 2rem 2.5rem;
+      max-width: 800px;
+      width: 90%;
+    }
+    h1 {text-align:center;margin-top:0;font-size:clamp(1.8rem,4vw,2.6rem);}
+    #time,#weather {font-weight:600;margin:0.5rem 0;text-align:center;}
+    ol {padding-left:1.2rem;}
+    ol li {margin-bottom:0.5rem;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Для мого улюбленого дідуся ПДФ</h1>
+
+    <!-- Поточний час і погода -->
+    <p id="time">Завантаження часу…</p>
+    <p id="weather">Завантаження погоди…</p>
+
+    <!-- Над-просте пояснення тієї самої інструкції українською -->
+    <ol>
+      <li>Створіть акаунт на GitHub або увійдіть.</li>
+      <li>Створіть репозиторій <strong>&lt;ваше-ім’я&gt;.github.io</strong>.</li>
+      <li>Додайте цей файл <code>index.html</code> і збережіть.</li>
+      <li>Увімкніть GitHub Pages у Settings → Pages.</li>
+      <li>Перейдіть за посиланням, яке з’явиться, – все готово!</li>
+    </ol>
+  </div>
+
+  <!-- JS: живий час + погода Open-Meteo -->
+  <script>
+    /* Поточний час для Європа/Київ */
+    function showTime() {
+      const now = new Date();
+      const t = now.toLocaleTimeString('uk-UA', {
+        timeZone: 'Europe/Kyiv',
+        hour: '2-digit', minute: '2-digit', second: '2-digit'
+      });
+      document.getElementById('time').textContent = 'Поточний час (Одеса): ' + t;
+    }
+    showTime();
+    setInterval(showTime, 1000);
+
+    /* Погода від Open-Meteo (без API-ключа) */
+    (async () => {
+      const url = 'https://api.open-meteo.com/v1/forecast'
+                + '?latitude=46.48&longitude=30.73'
+                + '&current=temperature_2m,weather_code'
+                + '&timezone=Europe%2FKyiv';
+      try {
+        const res = await fetch(url);
+        const data = await res.json();
+        const w = data.current;
+        const codes = {
+          0:'ясно', 1:'переважно ясно', 2:'частково хмарно', 3:'хмарно',
+          45:'туман', 48:'туман', 51:'мряка', 53:'мряка', 55:'мряка',
+          61:'дощ', 63:'дощ', 65:'сильний дощ', 80:'зливи'
+        };
+        document.getElementById('weather').textContent =
+          `Погода: ${codes[w.weather_code] ?? '—'}, ${w.temperature_2m} °C`;
+      } catch {
+        document.getElementById('weather').textContent =
+          'Не вдалося отримати погоду 😟';
+      }
+    })();
+  </script>
+</body>
+</html>
