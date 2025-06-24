@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Для мого улюбленого дідуся ПДФ</title>
 
-  <!-- Прості стилі й “красиве” тло -->
+  <!-- Прості стилі й градієнтне "красиве" тло -->
   <style>
     :root {
       --bg1: #4e54c8;
@@ -26,34 +26,107 @@
       background: rgba(0,0,0,.35);
       border-radius: 16px;
       padding: 2rem 2.5rem;
-      max-width: 800px;
-      width: 90%;
+      max-width: 900px;
+      width: 95%;
     }
-    h1 {text-align:center;margin-top:0;font-size:clamp(1.8rem,4vw,2.6rem);}
+    h1 {text-align:center;margin-top:0;font-size:clamp(1.8rem,4vw,2.6rem);}    
     #time,#weather {font-weight:600;margin:0.5rem 0;text-align:center;}
-    ol {padding-left:1.2rem;}
-    ol li {margin-bottom:0.5rem;}
+    ul {margin: 0.5rem 0 1.2rem 1.2rem;}
+    ol {padding-left:1.4rem;}
+    ol li {margin-bottom:0.6rem;}
+    code {background:rgba(255,255,255,.15);padding:0 0.3rem;border-radius:4px;}
   </style>
 </head>
 <body>
   <div class="wrap">
     <h1>Для мого улюбленого дідуся ПДФ</h1>
 
+    <!-- Короткий список‑пояснення теми інструкції -->
+    <ul>
+      <li><strong>Як створити таку веб‑сторінку</strong></li>
+      <li>Як розмістити її безкоштовно на <em>GitHub Pages</em></li>
+      <li>Як виводити поточний час та погоду для Одеси</li>
+    </ul>
+
     <!-- Поточний час і погода -->
     <p id="time">Завантаження часу…</p>
     <p id="weather">Завантаження погоди…</p>
 
-    <!-- Над-просте пояснення тієї самої інструкції українською -->
+    <!-- Дуже докладна покрокова інструкція -->
     <ol>
-      <li>Створіть акаунт на GitHub або увійдіть.</li>
-      <li>Створіть репозиторій <strong>&lt;ваше-ім’я&gt;.github.io</strong>.</li>
-      <li>Додайте цей файл <code>index.html</code> і збережіть.</li>
-      <li>Увімкніть GitHub Pages у Settings → Pages.</li>
-      <li>Перейдіть за посиланням, яке з’явиться, – все готово!</li>
+      <li>
+        <strong>Підготуйте обліковий запис GitHub</strong>
+        <ol>
+          <li>Відкрийте браузер і перейдіть на <a href="https://github.com" target="_blank" rel="noopener">github.com</a>.</li>
+          <li>Якщо у вас ще немає аккаунта:
+            <ol>
+              <li>Натисніть кнопку <strong>Sign&nbsp;up</strong> у верхньому правому куті.</li>
+              <li>Введіть e‑mail, створіть пароль, виберіть ім'я користувача та натисніть <em>Create account</em>.</li>
+              <li>Підтвердіть e‑mail, перейшовши за посиланням у листі.</li>
+            </ol>
+            Інакше просто натисніть <strong>Sign&nbsp;in</strong> і увійдіть.</li>
+        </ol>
+      </li>
+      <li>
+        <strong>Створіть новий репозиторій для сторінки</strong>
+        <ol>
+          <li>У верхній панелі GitHub натисніть піктограму <code>+</code> ➜ <strong>New repository</strong>.</li>
+          <li>У полі <em>Repository name</em> введіть: <code>&lt;ваше_ім'я&gt;.github.io</code>.<br>Приклад: якщо логін <code>njkbr99</code>, то ім'я буде <code>njkbr99.github.io</code>.</li>
+          <li>Переконайтеся, що вибрано радіокнопку <strong>Public</strong>.</li>
+          <li>Натисніть <strong>Create repository</strong>.</li>
+        </ol>
+      </li>
+      <li>
+        <strong>Додайте файл <code>index.html</code></strong>
+        <ol>
+          <li>На сторінці нового репозиторію натисніть кнопку <strong>Add file</strong> ➜ <strong>Create new file</strong>.</li>
+          <li>У полі file name введіть <code>index.html</code>.</li>
+          <li>Скопіюйте <em>весь</em> вміст цього HTML‑файла (див. нижче) та вставте у редактор.</li>
+          <li>Прокрутіть униз, у полі <em>Commit changes</em> додайте короткий коментар, наприклад <code>Initial commit</code>.</li>
+          <li>Натисніть <strong>Commit new file</strong>.</li>
+        </ol>
+      </li>
+      <li>
+        <strong>Увімкніть GitHub Pages</strong>
+        <ol>
+          <li>Перейдіть на вкладку <strong>Settings</strong> (праворуч, під назвою репозиторію).</li>
+          <li>У лівому меню прокрутіть униз і натисніть <strong>Pages</strong>.</li>
+          <li>У секції <em>Build and deployment → Source</em> виберіть:
+            <ul>
+              <li><strong>Deploy from a branch</strong>.</li>
+              <li><strong>Branch</strong> = <code>main</code>.</li>
+              <li><strong>Folder</strong> = <code>/ (root)</code>.</li>
+            </ul>
+            Після цього натисніть <strong>Save</strong>.</li>
+          <li>Під текстом з'явиться зелена плашка: «Your site is live at …». Скопіюйте URL.</li>
+        </ol>
+      </li>
+      <li>
+        <strong>Перевірте сторінку</strong>
+        <ol>
+          <li>Відкрийте скопійовану адресу, формат якої такий: <code>https://&lt;логін&gt;.github.io/</code>.</li>
+          <li>Через 30‑120 секунд має з'явитися ваша сторінка з:
+            <ul>
+              <li>заголовком «Для мого улюбленого дідуся ПДФ»;</li>
+              <li>живим часом Одеси, що оновлюється щосекунди;</li>
+              <li>актуальною температурою та описом погоди;</li>
+              <li>градієнтним фоном.</li>
+            </ul>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <strong>Корисні поради</strong>
+        <ol>
+          <li>Якщо бачите 404, зачекайте ще хвилину та оновіть сторінку з <kbd>Ctrl</kbd> + <kbd>F5</kbd>.</li>
+          <li>Щоб змінити вміст, редагуйте <code>index.html</code> у репозиторії й тисніть <em>Commit changes</em> — оновлення з'являться автоматично.</li>
+          <li>Якщо API Open‑Meteo не відповідає (рідко трапляється), просто перезавантажте сторінку.</li>
+        </ol>
+      </li>
     </ol>
   </div>
 
-  <!-- JS: живий час + погода Open-Meteo -->
+  <!-- JS: живий час + погода від Open‑Meteo -->
   <script>
     /* Поточний час для Європа/Київ */
     function showTime() {
@@ -67,7 +140,7 @@
     showTime();
     setInterval(showTime, 1000);
 
-    /* Погода від Open-Meteo (без API-ключа) */
+    /* Погода з Open‑Meteo (без API‑ключа) */
     (async () => {
       const url = 'https://api.open-meteo.com/v1/forecast'
                 + '?latitude=46.48&longitude=30.73'
@@ -78,9 +151,9 @@
         const data = await res.json();
         const w = data.current;
         const codes = {
-          0:'ясно', 1:'переважно ясно', 2:'частково хмарно', 3:'хмарно',
-          45:'туман', 48:'туман', 51:'мряка', 53:'мряка', 55:'мряка',
-          61:'дощ', 63:'дощ', 65:'сильний дощ', 80:'зливи'
+          0:'ясно',1:'переважно ясно',2:'частково хмарно',3:'хмарно',
+          45:'туман',48:'туман',51:'мряка',53:'мряка',55:'мряка',
+          61:'дощ',63:'дощ',65:'сильний дощ',80:'зливи'
         };
         document.getElementById('weather').textContent =
           `Погода: ${codes[w.weather_code] ?? '—'}, ${w.temperature_2m} °C`;
