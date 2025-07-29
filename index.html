@@ -1,40 +1,36 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Для мого улюбленого дідуся ПДФ</title>
 
-  <!-- Прості стилі й градієнтне "красиве" тло -->
+
+  <!-- Прості стилі -->
   <style>
-    :root {
-      --bg1: #4e54c8;
-      --bg2: #8f94fb;
-    }
     body {
       margin: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, var(--bg1), var(--bg2));
       font-family: system-ui, sans-serif;
-      color: #fff;
+      line-height: 1.5;
+      background: #f7f7f7;
+      color: #222;
     }
     .wrap {
-      backdrop-filter: blur(6px);
-      background: rgba(0,0,0,.35);
-      border-radius: 16px;
-      padding: 2rem 2.5rem;
-      max-width: 900px;
-      width: 95%;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1.5rem 2rem;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    h1 {text-align:center;margin-top:0;font-size:clamp(1.8rem,4vw,2.6rem);}    
+    h1 {text-align:center;margin-top:0;font-size:clamp(1.8rem,4vw,2.4rem);}
+    h2 {margin-top:1.2rem;font-size:1.3rem;}
     #time,#weather {font-weight:600;margin:0.5rem 0;text-align:center;}
-    ul {margin: 0.5rem 0 1.2rem 1.2rem;}
+    ul {margin: 0.5rem 0 1rem 1.2rem;}
     ol {padding-left:1.4rem;}
     ol li {margin-bottom:0.6rem;}
-    code {background:rgba(255,255,255,.15);padding:0 0.3rem;border-radius:4px;}
+    code {background:#f0f0f0;padding:0 0.2rem;border-radius:4px;}
+    .step-img{max-width:100%;border:1px solid #ccc;margin-top:0.3rem;}
   </style>
 </head>
 <body>
@@ -54,63 +50,64 @@
     <!-- Дуже докладна покрокова інструкція -->
     <ol>
       <li>
-        <strong>Підготуйте обліковий запис GitHub</strong>
+        <h2>Підготуйте обліковий запис GitHub</h2>
         <ol>
-          <li>Відкрийте браузер і перейдіть на <a href="https://github.com" target="_blank" rel="noopener">github.com</a>.</li>
-          <li>Якщо у вас ще немає аккаунта:
+          <li>Перейди на <a href="https://github.com" target="_blank" rel="noopener">github.com</a>.</li>
+          <li>Якщо у тебе ще немає акаунта:
             <ol>
-              <li>Натисніть кнопку <strong>Sign&nbsp;up</strong> у верхньому правому куті.</li>
-              <li>Введіть e‑mail, створіть пароль, виберіть ім'я користувача та натисніть <em>Create account</em>.</li>
-              <li>Підтвердіть e‑mail, перейшовши за посиланням у листі.</li>
+                <li>Натисни кнопку <strong>Sign&nbsp;up</strong> у верхньому правому куті.<br>
+                <img src="img/signup.png" alt="Кнопка Sign up" class="step-img"></li>
+              <li>Введи e‑mail, створи пароль, вибери ім'я користувача та натисни <em>Create account</em>.</li>
+              <li>Підтверди e‑mail, перейшовши за посиланням у листі.</li>
             </ol>
-            Інакше просто натисніть <strong>Sign&nbsp;in</strong> і увійдіть.</li>
+            Інакше просто натисни <strong>Sign&nbsp;in</strong> і увійди.</li>
         </ol>
       </li>
       <li>
-        <strong>Створіть новий репозиторій для сторінки</strong>
+        <h2>Створи новий репозиторій для сторінки</h2>
         <ol>
-          <li>У верхній панелі GitHub натисніть піктограму <code>+</code> ➜ <strong>New repository</strong> (верхній правий кут).</li>
-          <li>У полі <em>Repository name</em> введіть: <code>&lt;ваше_ім'я&gt;</code></li>
-          <li>Переконайтеся, що вибрано радіокнопку <strong>Public</strong>.</li>
-          <li>Натисніть <strong>Create repository</strong>.</li>
+            <li>У верхній панелі GitHub натисни піктограму <code>+</code> ➜ <strong>New repository</strong> (верхній правий кут).<br>            <img src="img/new-repo.png" alt="Створення репозиторію" class="step-img"></li>
+          <li>У полі <em>Repository name</em> введи: <code>&lt;твоє_ім'я&gt;</code></li>
+          <li>Переконайся, що вибрано радіокнопку <strong>Public</strong>.</li>
+          <li>Натисни <strong>Create repository</strong>.</li>
         </ol>
       </li>
       <li>
-        <strong>Додайте файл <code>index.html</code></strong>
+        <h2>Додай файл <code>index.html</code></h2>
         <ol>
-          <li>На сторінці нового репозиторію натисніть кнопку <strong>Add file</strong> ➜ <strong>Create new file</strong>.</li>
-          <li>У полі file name введіть <code>index.html</code>.</li>
-          <li>Напишіть будь-який текст.</li>
-          <li>Прокрутіть униз, у полі <em>Commit changes</em> додайте короткий коментар, наприклад <code>Initial commit</code>.</li>
-          <li>Натисніть <strong>Commit new file</strong>.</li>
+          <li>На сторінці нового репозиторію натисни кнопку <strong>Add file</strong> ➜ <strong>Create new file</strong>.</li>
+          <li>У полі file name введи <code>index.html</code>.</li>
+          <li>Напиши будь-який текст.</li>
+          <li>Прокрути униз, у полі <em>Commit changes</em> додай короткий коментар, наприклад <code>Initial commit</code>.</li>
+          <li>Натисни <strong>Commit new file</strong>.</li>
         </ol>
       </li>
       <li>
-        <strong>Увімкніть GitHub Pages</strong>
+        <h2>Увімкни GitHub Pages</h2>
         <ol>
-          <li>Перейдіть на вкладку <strong>Settings</strong> (праворуч, під назвою репозиторію).</li>
-          <li>У лівому меню прокрутіть униз і натисніть <strong>Pages</strong>.</li>
-          <li>У секції <em>Build and deployment → Source</em> виберіть:
-            <ul>
-              <li><strong>Deploy from a branch</strong>.</li>
-              <li><strong>Branch</strong> = <code>main</code>.</li>
-              <li><strong>Folder</strong> = <code>/ (root)</code>.</li>
-            </ul>
-            Після цього натисніть <strong>Save</strong>.</li>
-          <li>Више з'явиться зелена плашка: «Your site is live at …». Натисніть на посилання.</li>
+            <li>Перейди на вкладку <strong>Settings</strong> (праворуч, під назвою репозиторію).<br>            <img src="img/settings-tab.png" alt="Вкладка Settings" class="step-img"></li>
+            <li>У лівому меню прокрути униз і натисни <strong>Pages</strong>.<br>            <img src="img/pages-menu.png" alt="Меню Pages" class="step-img"></li>
+            <li>У секції <em>Build and deployment → Source</em> вибери:
+              <ul>
+                <li><strong>Deploy from a branch</strong>.</li>
+                <li><strong>Branch</strong> = <code>main</code>.</li>
+                <li><strong>Folder</strong> = <code>/ (root)</code>.</li>
+              </ul>
+              Після цього натисни <strong>Save</strong>.</li>
+          <li>Вище з'явиться зелена плашка: «Your site is live at …». Натисни на посилання.</li>
         </ol>
       </li>
       <li>
-        <strong>Перевірте сторінку</strong>
+        <h2>Перевір сторінку</h2>
         <ol>
-          <li>Через 30‑120 секунд має з'явитися ваша сторінка з текстом, який ви додали.</li>
+          <li>Через 30‑120 секунд має з'явитися твоя сторінка з текстом, який ти додав.</li>
         </ol>
       </li>
       <li>
-        <strong>Корисні поради</strong>
+        <h2>Корисні поради</h2>
         <ol>
-          <li>Якщо бачите 404, зачекайте ще хвилину та оновіть сторінку з <kbd>Ctrl</kbd> + <kbd>F5</kbd>.</li>
-          <li>Щоб змінити вміст, редагуйте <code>index.html</code> у репозиторії й тисніть <em>Commit changes</em> — оновлення з'являться автоматично.</li>
+          <li>Якщо бачиш 404, зачекай ще хвилину та онови сторінку з <kbd>Ctrl</kbd> + <kbd>F5</kbd>.</li>
+          <li>Щоб змінити вміст, редагуй <code>index.html</code> у репозиторії й тисни <em>Commit changes</em> — оновлення з'являться автоматично.</li>
         </ol>
       </li>
     </ol>
